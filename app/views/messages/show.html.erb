@@ -3,7 +3,9 @@
 	<em><p style="font-size: 10px">Created <%= time_ago_in_words(@message.created_at) %> ago</p></em>
 	<p>Content: <%= @message.description %></p>
 	
-	
 	<button><%= link_to 'Back', root_path %></button><br>
+	<button><%= link_to 'Update', edit_message_path %></button><br>
+	<button><%= link_to 'Delete', @message, method: :delete, data: {confirm: 'are you sure?'} %></button><br>
+
 	<small><%= @message.created_at.strftime("%B %d %Y, %l:%M%P") %></small>
 </div>

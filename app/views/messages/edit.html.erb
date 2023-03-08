@@ -1,0 +1,7 @@
+<h1>Edit Message</h1>
+<%= simple_form_for @message do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
+<%= link_to 'Cancel', @message %>
