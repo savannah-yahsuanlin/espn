@@ -1,0 +1,9 @@
+<div class="col-md-8 col-md-offset-2">
+	<h1>Title: <%= @message.title %></h1>
+	<em><p style="font-size: 10px">Created <%= time_ago_in_words(@message.created_at) %> ago</p></em>
+	<p>Content: <%= @message.description %></p>
+	
+	
+	<button><%= link_to 'Back', root_path %></button><br>
+	<small><%= @message.created_at.strftime("%B %d %Y, %l:%M%P") %></small>
+</div>

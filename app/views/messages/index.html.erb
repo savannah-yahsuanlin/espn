@@ -1,5 +1,13 @@
 <h1>ESPN</h1>
 
 <div class="col-md-10 col-md-offset-1">
-	<%= link_to 'create', new_message_path %>
+	<%= link_to 'create', new_message_path, class: 'btn btn-info'%>
+</div>
+<div class="col-md-10 col-md-offset-1">
+	<% @messages.each do |f| %>
+		<div class="container">
+			<h2>Title: <%= f.title %></h2>
+			<p><%= link_to 'Join Convo', f, class: 'btn btn-default'%></p>
+		</div>
+	<% end %>
 </div>

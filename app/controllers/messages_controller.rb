@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
-	before_action only: [:show, :edit, :destroy, :update]
+	before_action :find_message, only: [:show, :edit, :destroy, :update]
 
 	def index
+		@messages = Message.all.order('created_at ASC')
 	end
 
 	def new
@@ -15,6 +16,9 @@ class MessagesController < ApplicationController
 		else
 			render 'new'
 		end
+	end
+
+	def show
 	end
 
 	private
