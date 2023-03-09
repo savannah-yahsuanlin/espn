@@ -2,7 +2,7 @@
 	<h1>Title: <%= @message.title %></h1>
 	<em><p style="font-size: 10px">Created <%= time_ago_in_words(@message.created_at) %> ago</p></em>
 	<p>Content: <%= @message.description %></p>
-	
+	<p>Author: <%= @message.user_id %></p>
 	<button><%= link_to 'Back', root_path %></button><br>
 	<button><%= link_to 'Update', edit_message_path %></button><br>
 	<button><%= link_to 'Delete', @message, method: :delete, data: {confirm: 'are you sure?'} %></button><br>
