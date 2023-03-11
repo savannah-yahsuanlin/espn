@@ -1,9 +1,11 @@
 <div class="container">
 	<div><%= comment.context %></div>
 	<div class="btn btn-group">
-		<% if comment.user_id == current_user.id %>
-			<%= link_to 'Edit', edit_message_comment_path(comment.message, comment) %>
-			<%= link_to 'Delete', message_comment_path(comment.message, comment), method: :delete, data: {confirm: 'are you sure?'} %>
+		<% if user_signed_in? %>
+			<% if comment.user_id == current_user.id %>
+				<%= link_to 'Edit', edit_message_comment_path(comment.message, comment) %>
+				<%= link_to 'Delete', message_comment_path(comment.message, comment), method: :delete, data: {confirm: 'are you sure?'} %>
+			<% end %>
 		<% end %>
 	</div>
 </div>

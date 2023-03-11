@@ -4,8 +4,12 @@
 	<p>Content: <%= @message.description %></p>
 	<p>Author: <%= @message.user_id %></p>
 	<button><%= link_to 'Back', root_path %></button><br>
-	<button><%= link_to 'Update', edit_message_path %></button><br>
-	<button><%= link_to 'Delete', @message, method: :delete, data: {confirm: 'are you sure?'} %></button><br>
+	<% if user_signed_in? %>
+		<% if @message.user_id == current_user.id %>
+			<button><%= link_to 'Update', edit_message_path %></button><br>
+			<button><%= link_to 'Delete', @message, method: :delete, data: {confirm: 'are you sure?'} %></button><br>
+		<% end %>
+	<% end %>
 
 	<small><%= @message.created_at.strftime("%B %d %Y, %l:%M%P") %></small>
 	<h3>Comments:</h3>
