@@ -8,10 +8,14 @@
 	<button><%= link_to 'Delete', @message, method: :delete, data: {confirm: 'are you sure?'} %></button><br>
 
 	<small><%= @message.created_at.strftime("%B %d %Y, %l:%M%P") %></small>
-
-
-	<h3 class="col-md-8 col-md-offset-2">Comments:</h3>
-	<p><%= render @message.comments %></p>
+	<h3>Comments:</h3>
+	
+	<div class="">
+		<p><%= render @message.comments %></p>
+	</div>
+	
 	<h3>Reply</h3>
 	<%= render 'comments/form'%>
+
+	</div>
 </div>
