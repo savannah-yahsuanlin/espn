@@ -1,4 +1,4 @@
-<%= simple_form_for @comment do |f| %>
+<%= simple_form_for ([@message, @message.comments.build]) do |f| %>
   <%= f.input :context %>
   <%= f.button :submit %>
-<% end %>
+<% end %> 
